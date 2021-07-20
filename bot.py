@@ -3,7 +3,7 @@ import schedule
 from threading import Thread
 from time import sleep
 from telebot import TeleBot, types
-from main import short_url, get_random_anek_page, get_single_anek, get_comments
+from utils import short_url, get_random_anek_page, get_single_anek, get_comments
 from dotenv import load_dotenv
 
 

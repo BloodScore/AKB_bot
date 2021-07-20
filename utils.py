@@ -55,22 +55,3 @@ def get_comments(soup):
         i += 1
 
     return aneks[1:]
-
-
-def main():
-    soup, url = get_random_anek_page()
-
-    print(f'\n{url}\n')
-
-    print(f'Анекдот:\n\n{get_single_anek(soup)}')
-
-    comments = input('\nВы хотели бы увидеть топ-3 комментария (да/нет)? ')
-    print()
-
-    if comments == 'да':
-        for comment in get_comments(soup):
-            print(f'{comment}\n')
-
-
-if __name__ == '__main__':
-    main()
