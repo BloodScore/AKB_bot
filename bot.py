@@ -38,7 +38,7 @@ def send_random_anek(message):
 def callback_worker(call):
     if call.data == 'no':
         bot.send_message(call.message.chat.id, '/anek - случайный анекдот\n'
-                                               '/anek_of_the_day - анекдот раз в день\n'
+                                               '/anek_of_the_day - анекдот раз в час\n'
                                                '/unsubscribe - отписаться от рассылки')
     else:
         comments = ''
@@ -53,7 +53,7 @@ def send_anek_of_the_day(message):
         bot.send_message(message.chat.id, 'Вы уже подписаны на рассылку')
     else:
         user_schedule = schedule.Scheduler()
-        job = user_schedule.every(10).minutes.do(send_anek, message)
+        job = user_schedule.every().hour.do(send_anek, message)
 
         users_schedules[message.chat.id] = [user_schedule, job]
 
