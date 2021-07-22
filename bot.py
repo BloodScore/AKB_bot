@@ -14,7 +14,7 @@ users_schedules = {}
 @bot.message_handler(commands=['help', 'start'])
 def help_command(message):
     bot.send_message(message.chat.id, '/anek - случайный анекдот\n'
-                                      '/anek_of_the_day - анекдот раз в день\n'
+                                      '/anek_of_the_day - анекдот раз в час\n'
                                       '/unsubscribe - отписаться от рассылки')
 
 
